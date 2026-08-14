@@ -43,15 +43,114 @@ EOF  -end of file 文件的结束标志 值是-1
 //     printf("%d\n",strlen("c:\test\121"));
 //     return 0;
 // }
+
+
+
+// 0 - 数字0
+// '0' - 字符0 - ASCII值是48
+// '\0' - 字符 - ASCII值是0
+// 第一个和第三个其实是没什么区别的
+// 所以你给数组里面放个数字0或者放个\0其实是没什么区别的
+
+// int main(){
+//     // char arr[]={'b','i','t'};
+//     //[b i t][      ?      ]
+//     char arr[8]={'b','i','t'};
+//     //不完全初始化，剩余的部分默认初始化为0
+//     printf("hello world\n");
+//     printf("%d\n",strlen(arr));//随机值
+//     return 0;
+// }
+
+
+
+// int main(){
+//     int arr[10]={1};
+//     int n=10;
+//     int arr[n];
+//     //C99标准之前，数组的大小都是用常量或者常量表达式来指定
+//     int arr2[10]={0};//ok
+//     int arr3[4+6]={1,2,3,4};//ok
+
+//     //C99标准之后，支持了变长数组，这个时候允许数组的大小是变量，但是这种指定方式的数组是不能初始化的。
+//     int m=100;
+//     int arr4[m];
+
+//     //vs对C99中的一些语法支持不是很好，不支持变长数组的
+//     return 0;
+// }
+
+
+// int Max(int x, int y){
+//     if(x>y){
+//         return x;
+//     }
+//     else{
+//         return y;
+//     }
+// }
+// int main(){
+//     int a=0;
+//     int b=0;
+//     scanf("%d %d",&a,&b);
+//     int r=Max(a,b);
+//     printf("%d\n",r);
+
+//     return 0;
+// }
+
+
+// int main(){
+//     int x=0;
+//     int y=0;
+//     scanf("%d",&x);
+//     if(x>0){
+//         y=-1;
+//     }
+//     else if(x==0){
+//         y=0;
+//     }
+//     else{
+//         y=1;
+//     }
+//     printf("%d\n",y);
+
+//     return 0;
+// }
+
+
+// int main(){
+//     // int a=7/2;
+//     // int b=7%2;
+//     // printf("%d\n",a);
+//     // printf("%d\n",b);
+//     //  / 除号的两端都是整数的时候，执行的是整数除法，如果两端只要有一个浮点数就执行浮点数的除法
+//     float a=7/2.0;
+//     int b=7%2;
+//     //对于取余操作符的两个操作数只能是整数
+//     printf("%.2f\n",a);
+//     printf("%d\n",b);
+
+//     return 0;
+// }
+
+
+// 单目操作符 - 只有一个操作数的操作符
+//eg： ! - 逻辑非操作符
+
+
+//sizeof是操作符，是单目操作符
 int main(){
-    char arr[]={'b','i','t'};
-    //[b i t][      ?      ]
-    printf("hello world\n");
-    printf("%d\n",strlen(arr));//随机值
+    int a=10;
+    printf("%d\n",sizeof(a));//4
+    printf("%d\n",sizeof(int));//4
+    printf("%d\n",sizeof a );//4
+
+    int arr[10]={0};
+    printf("%d\n",sizeof(arr));//40 计算的是整个数组的大小，单位是字节
+    printf("%d\n",sizeof(arr[0])); //4 计算的是数组中第一个元素的大小，单位是字节
+    printf("%d\n",sizeof(arr)/sizeof(arr[0]));//10 计算的是数组中元素的个数
+
     return 0;
 }
-
-
-
-
 
