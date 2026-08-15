@@ -140,17 +140,66 @@ EOF  -end of file 文件的结束标志 值是-1
 
 
 //sizeof是操作符，是单目操作符
-int main(){
-    int a=10;
-    printf("%d\n",sizeof(a));//4
-    printf("%d\n",sizeof(int));//4
-    printf("%d\n",sizeof a );//4
+// int main(){
+//     int a=10;
+//     printf("%d\n",sizeof(a));//4
+//     printf("%d\n",sizeof(int));//4
+//     printf("%d\n",sizeof a );//4
 
-    int arr[10]={0};
-    printf("%d\n",sizeof(arr));//40 计算的是整个数组的大小，单位是字节
-    printf("%d\n",sizeof(arr[0])); //4 计算的是数组中第一个元素的大小，单位是字节
-    printf("%d\n",sizeof(arr)/sizeof(arr[0]));//10 计算的是数组中元素的个数
+//     int arr[10]={0};
+//     printf("%d\n",sizeof(arr));//40 计算的是整个数组的大小，单位是字节
+//     printf("%d\n",sizeof(arr[0])); //4 计算的是数组中第一个元素的大小，单位是字节
+//     printf("%d\n",sizeof(arr)/sizeof(arr[0]));//10 计算的是数组中元素的个数
+
+//     return 0;
+// }
+
+
+
+// int main(){
+//     int a=10;
+//     int b=20;
+//     int r=a>b?a:b;
+//     //条件操作符 --- 也叫三目操作符
+//     printf("%d\n",r);
+
+//     return 0;
+// }
+
+
+// 逗号表达式就是逗号隔开的一串表达式
+// 逗号表达式的特点是：从左向右依次计算，整个表达式的结果是最后一个表达式的结果
+
+// int main(){
+//     int a=10;
+//     int b=20;
+//     int c=0;
+//     //     c=8   a=28  5
+//     int d=(c=a-2,a=b+c,c-3);
+//     printf("%d\n",d);
+
+//     return 0;
+// }
+
+
+// int main(){
+//     //定义一个数组大小的时候最好用常量
+//     //访问数组下标的时候可以用变量
+//     int arr[10]={1,2,3,4,5,6,7,8,9,10};
+//     int n=3;
+//     arr[n]=20;//[]就是下标引用操作符   arr和3就是[]的操作数
+    
+//     //a+b
+//     return 0;
+// }
+
+
+//函数调用操作符()
+int Add(int x,int y){
+    return x+y;
+}
+int main(){
+    int sum=Add(2,3);//()就是函数调用操作符，Add，2，3都是()的操作数
 
     return 0;
 }
-
