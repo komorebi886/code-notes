@@ -195,11 +195,58 @@ EOF  -end of file 文件的结束标志 值是-1
 
 
 //函数调用操作符()
-int Add(int x,int y){
-    return x+y;
-}
-int main(){
-    int sum=Add(2,3);//()就是函数调用操作符，Add，2，3都是()的操作数
+// int Add(int x,int y){
+//     return x+y;
+// }
+// int main(){
+//     int sum=Add(2,3);//()就是函数调用操作符，Add，2，3都是()的操作数
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+//typedef就是给复杂的类型重命名
+// typedef unsigned int unit;
+
+// typedef struct Node
+// {
+//     int data;
+//     struct Node * next;
+// }Node;
+
+// int main(){
+//     unsigned int num=0;
+//     unit num2=1;
+//     struct Node n;
+//     Node n2;
+
+//     return 0;
+// }
+
+
+//static
+// 1.修饰局部变量
+// 2.修饰全局变量
+// 3.修饰函数
+
+// 局部变量
+// void test(){
+//     static int a=1;
+//     // static修饰局部变量的时候，局部变量出了作用域，不销毁的。(也就是锁住了)
+//     // 本质上，static修饰局部变量的时候，改变了变量的存储位置的。
+//     // 影响了变量的生命周期，生命周期变长，和程序的生命周期一样。
+//     a++;
+//     printf("%d\n",a);
+// }
+// int main(){
+//     int i =0;
+//     while(i<10){
+//         test();
+//         i++;
+//     }
+
+//     return 0;
+// }
+
+// 全局变量
+ int g_val=2022;
