@@ -248,5 +248,62 @@ EOF  -end of file 文件的结束标志 值是-1
 //     return 0;
 // }
 
-// 全局变量
- int g_val=2022;
+
+// // 全局变量
+//  static int g_val=2022;
+// //  static修饰全局变量的时候，这个全局变量的外部链接属性就变成了内部链接属性。其他源文件(.c)就不能再使用到这个全局变量了。
+
+
+// // static 修饰函数
+// extern int Add(int x, int y);
+
+// int main(){
+//     int a=10;
+//     int b=20;
+
+//     int z=Add(a,b);
+//     // 一个函数本来是具有外部链接属性的，但是被static修饰的时候，外部链接属性就变成了内部链接属性，其他源文件(.c)就无法使用了
+//     printf("%d\n",z);
+
+//     return 0;
+// }
+
+
+// // register寄存器变量
+// int main(){
+//     // 寄存器变量
+//     register int num=3;//建议：3存放在寄存器中
+
+//     return 0;
+// }
+
+
+// define定义标识符常量
+#define NUM 100
+
+
+// #define 定义宏
+// 宏是有参数
+
+#define ADD(x,y) ((x)+(y))
+
+int Add(int x, int y){
+    return x+y;
+}
+
+
+int main(){
+    printf("%d\n",NUM);
+    int n=NUM;
+    printf("%d\n",n);
+    int arr[NUM]={0};
+    int a=10;
+    int b=20;
+    int c=ADD(a,b);
+
+    printf("%d",c);
+    
+    return 0;
+}
+
+
