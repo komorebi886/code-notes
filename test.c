@@ -324,20 +324,43 @@ EOF  -end of file 文件的结束标志 值是-1
 // }
 
 
-int main(){
-    int * p;
-    char * p2;
-    // 不管是什么类型的指针，都是在创建指针变量
-    // 指针变量是用来存放地址的
-    // 指针变量的大小取决于一个地址存放的时候需要多大空间
-    // 32位机器上的地址：32bit位 - 4byte，所以指针变量的大小是4个字节
-    // 64位机器上的地址：64bit位 - 8byte，所以指针变量的大小是8个字节
+// int main(){
+//     int * p;
+//     char * p2;
+//     // 不管是什么类型的指针，都是在创建指针变量
+//     // 指针变量是用来存放地址的
+//     // 指针变量的大小取决于一个地址存放的时候需要多大空间
+//     // 32位机器上的地址：32bit位 - 4byte，所以指针变量的大小是4个字节
+//     // 64位机器上的地址：64bit位 - 8byte，所以指针变量的大小是8个字节
 
-    printf("%zu\n",sizeof(char*));//8
-    printf("%zu\n",sizeof(short*));//8
-    printf("%zu\n",sizeof(int*));//8
-    printf("%zu\n",sizeof(float*));//8
-    printf("%zu\n",sizeof(double*));//8
+//     printf("%zu\n",sizeof(char*));//8
+//     printf("%zu\n",sizeof(short*));//8
+//     printf("%zu\n",sizeof(int*));//8
+//     printf("%zu\n",sizeof(float*));//8
+//     printf("%zu\n",sizeof(double*));//8
+
+//     return 0;
+// }
+
+
+//结构体
+//学生
+struct Stu{
+    // 成员
+    char name[20];
+    int age;
+    char sex[10];
+    char tele[12];
+};
+void print(struct Stu * ps){
+    printf("%s %d %s %s\n",(*ps).name,(*ps).age,(*ps).sex,(*ps).tele);
+    // ->
+    
+}
+int main(){
+    struct Stu s={"zhangsan",20,"nan","15596668862"};
+
+    printf("%s %d %s %s\n",s.name,s.age,s.sex,s.tele);
 
     return 0;
 }
