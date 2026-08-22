@@ -345,22 +345,52 @@ EOF  -end of file 文件的结束标志 值是-1
 
 //结构体
 //学生
-struct Stu{
-    // 成员
-    char name[20];
-    int age;
-    char sex[10];
-    char tele[12];
-};
-void print(struct Stu * ps){
-    printf("%s %d %s %s\n",(*ps).name,(*ps).age,(*ps).sex,(*ps).tele);
-    // ->
+// struct Stu{
+//     // 成员
+//     char name[20];
+//     int age;
+//     char sex[10];
+//     char tele[12];
+// };
+// void print(struct Stu * ps){
+//     printf("%s %d %s %s\n",(*ps).name,(*ps).age,(*ps).sex,(*ps).tele);
+//     // ->
+//     // 结构体指针变量->成员名
+//     printf("%s %d %s %s\n",ps->name,ps->age,ps->sex,ps->tele);
+// }
+
+// int main(){
+//     struct Stu s={"zhangsan",20,"nan","15596668862"};
     
-}
-int main(){
-    struct Stu s={"zhangsan",20,"nan","15596668862"};
+//     // 结构体对象.成员名
+//     // printf("%s %d %s %s\n",s.name,s.age,s.sex,s.tele);
+//     print(&s);
 
-    printf("%s %d %s %s\n",s.name,s.age,s.sex,s.tele);
+//     return 0;
+// }
+// .和->的区别
+// 得到了一个结构体用.
+// 得到了一个指针用->
 
-    return 0;
-}
+
+// switch语句里面可以包含break，但不能包含continue
+// define不是关键字，它是预处理指令
+
+
+// 编程题
+// void xiangchu(int x,int y){
+//     int q=x/y;
+//     printf("%d ",q);
+//     int p=x%y;
+//     printf("%d\n",p);
+// }
+// int main(){
+//     int a=0;
+//     int b=0;
+//     scanf("%d %d",&a,&b);
+//     xiangchu(a,b);
+
+//     return 0;
+// }
+
+
